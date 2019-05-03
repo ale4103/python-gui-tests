@@ -1,12 +1,15 @@
 import random
 import string
 
-def test_add_group(app):
+def test_del_group(app):
     old_list = app.groups.get_group_list()
-    new_group = random_string("group_", 10)
-    app.groups.add_new_group(new_group)
+    if len(old_list) == 1:
+        app.groups.add_new_group(random_string("group_", 10))
+        old_list = app.groups.get_group_list()
+    group_to_del = random.choice(old_list)
+    app.groups.del_group(group_to_del)
+    old_list.remove(group_to_del)
     new_list = app.groups.get_group_list()
-    old_list.append(new_group)
     assert sorted(old_list) == sorted(new_list)
 
 def random_string(prefix, maxlen):

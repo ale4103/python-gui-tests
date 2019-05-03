@@ -1,5 +1,4 @@
 from pywinauto.application import Application as WinApplication
-
 from fixture.group import GroupHelper
 
 
