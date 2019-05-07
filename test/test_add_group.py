@@ -1,11 +1,11 @@
 import random
 import string
-from generator import gengroups
+from generator import gen_groups
 
 def test_add_group(app):
     old_list = app.groups.get_group_list()
     #new_group = random_string("group_", 10)
-    new_group = app.gengroups.read_excel()
+    new_group = app.gen_groups.read_excel()
     app.groups.add_new_group(new_group)
     new_list = app.groups.get_group_list()
     old_list.append(new_group)
