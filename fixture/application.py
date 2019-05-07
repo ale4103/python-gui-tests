@@ -9,7 +9,7 @@ class Application:
         self.main_window = self.application.window(title="Free Address Book")
         self.main_window.wait("visible")
         self.groups = GroupHelper(self)
-        self.gengroups = GenGroups(self)
+        self.gen_groups = GenGroups(self)
 
     def destroy(self):
         self.main_window.close()
